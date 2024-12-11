@@ -27,12 +27,12 @@ Route::group(['middleware' => 'auth.jwt'], function () {
     Route::post('/token/gerar', [TokenSisController::class, 'geratoken']);
 
     // CADASTRAR
-    Route::prefix('cadastrar')->group(function () {
+    Route::prefix('register')->group(function () {
         // CRUD USUÁRIO
-        Route::post('/usuario', [CadastrastraUserController::class, 'cadastraUsuario']);
+        Route::post('/user', [CadastrastraUserController::class, 'cadastraUsuario']);
         Route::post('/admin', [CadastrastraUserController::class, 'cadastraUsuarioAdmin']);
 
         // CRUD COMPANY
-        Route::post('/cadastrar/compania', [CompanyController::class, 'CadastraCompany']);
+        Route::post('/register/company', [CompanyController::class, 'CadastraCompany']);
     });
 });
