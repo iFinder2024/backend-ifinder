@@ -24,7 +24,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::group(['middleware' => 'auth.jwt'], function () {
     Route::post('/me', [AuthController::class, 'me']);
     Route::post('/logout', [AuthController::class, 'logout']);
-    Route::post('/token/gerar', [TokenSisController::class, 'geratoken']);
+    Route::post('/token/generate', [TokenSisController::class, 'geratoken']);
 
     // CADASTRAR
     Route::prefix('register')->group(function () {
